@@ -43,23 +43,30 @@ setting (user 'root' with no password) */
 
 <head>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: #abd9e9;
-            font-family: Arial;
+            background-color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #container {
             width: 500px;
             height: 700px;
-            background: white;
-            margin: 0 auto;
+            background: #fff;
             font-size: 0;
-            border-radius: 5px;
+            border-radius: 3px;
             overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
         }
 
         main {
@@ -72,23 +79,15 @@ setting (user 'root' with no password) */
 
         main header {
             height: 100px;
-            padding: 30px 20px 30px 40px;
-            background-color: blue;
+            background-color: #414042;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         main header>* {
             display: inline-block;
             vertical-align: top;
-        }
-
-        main header img:first-child {
-            width: 24px;
-            margin-top: 8px;
-        }
-
-        main header img:last-child {
-            width: 24px;
-            margin-top: 8px;
         }
 
         main header div {
@@ -98,9 +97,9 @@ setting (user 'root' with no password) */
 
         main header h2 {
             font-size: 25px;
-            margin-top: 5px;
             text-align: center;
-            color: #FFFFFF;
+            color: #e94e46;
+            color: #fff;
         }
 
         main .inner_div {
@@ -117,61 +116,47 @@ setting (user 'root' with no password) */
             position: relative;
             border-top: 2px solid #fff;
             border-bottom: 2px solid #fff;
-            padding: 50px;
-        }
-
-        main .triangle {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 8px 8px 8px;
-            border-color: transparent transparent #58b666 transparent;
-            margin-left: 20px;
-            clear: both;
         }
 
         main .message {
             padding: 10px;
-            color: #000;
-            margin-left: 15px;
-            background-color: #58b666;
+            color: #fff;
+            background-color: #e94e46;
             line-height: 20px;
             max-width: 90%;
             display: inline-block;
             text-align: left;
             border-radius: 5px;
             clear: both;
-        }
-
-        main .triangle1 {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 8px 8px 8px;
-            border-color: transparent transparent #6fbced transparent;
-            margin-right: 20px;
-            float: right;
-            clear: both;
+            border-bottom-left-radius: 0;
+            min-width: 100px;
+            margin: 25px;
+            margin-bottom: 0;
+            margin-top: 0;
         }
 
         main .message1 {
             padding: 10px;
             color: #000;
             margin-right: 15px;
-            background-color: #6fbced;
+            background-color: #e94e46;
             line-height: 20px;
             max-width: 90%;
             display: inline-block;
             text-align: left;
             border-radius: 5px;
+            border-bottom-right-radius: 0;
             float: right;
             clear: both;
+            margin: 25px;
+            margin-bottom: 0;
+            min-width: 100px;
         }
 
         main footer {
             height: 150px;
             padding: 20px 30px 10px 20px;
-            background-color: grey;
+            background-color: #414042;
         }
 
         main footer .input1 {
@@ -225,13 +210,9 @@ setting (user 'root' with no password) */
     <div id="container">
         <main>
             <header>
-                <img src="https://s3-us-west-2.amazonaws.com/
-			s.cdpn.io/1940306/ico_star.png" alt="">
                 <div>
-                    <h2>GROUP CHAT</h2>
+                    <h2>ShareYourFeelings</h2>
                 </div>
-                <img src="https://s3-us-west-2.amazonaws.com/
-			s.cdpn.io/1940306/ico_star.png" alt="">
             </header>
 
             <script>
@@ -261,14 +242,12 @@ setting (user 'root' with no password) */
                             $i = 5;
                             $first = $row;
                     ?>
-                            <div id="triangle1" class="triangle1"></div>
                             <div id="message1" class="message1">
                                 <span style="color:white;float:right;">
                                     <?php echo $row['msg']; ?></span> <br />
                                 <div>
-                                    <span style="color:black;float:left;font-size:10px;clear:both;">
-                                        <?php echo $row['uname']; ?>,
-                                        <?php echo $row['dt']; ?>
+                                    <span style="color:#fff;float:left;clear:both;">
+                                        <?php echo $row['uname']; ?>
                                     </span>
                                 </div>
                             </div>
@@ -277,16 +256,13 @@ setting (user 'root' with no password) */
                         } else {
                             if ($row['uname'] != $first['uname']) {
                             ?>
-                                <div id="triangle" class="triangle"></div>
                                 <div id="message" class="message">
                                     <span style="color:white;float:left;">
                                         <?php echo $row['msg']; ?>
                                     </span> <br />
                                     <div>
-                                        <span style="color:black;float:right;
-		font-size:10px;clear:both;">
-                                            <?php echo $row['uname']; ?>,
-                                            <?php echo $row['dt']; ?>
+                                        <span style="color:#fff;float:left;clear:both;">
+                                            <?php echo $row['uname']; ?>
                                         </span>
                                     </div>
                                 </div>
@@ -294,16 +270,13 @@ setting (user 'root' with no password) */
                             <?php
                             } else {
                             ?>
-                                <div id="triangle1" class="triangle1"></div>
                                 <div id="message1" class="message1">
                                     <span style="color:white;float:right;">
                                         <?php echo $row['msg']; ?>
                                     </span> <br />
                                     <div>
-                                        <span style="color:black;float:left;
-		font-size:10px;clear:both;">
-                                            <?php echo $row['uname']; ?>,
-                                            <?php echo $row['dt']; ?>
+                                        <span style="color:#fff;float:left;clear:both;">
+                                            <?php echo $row['uname']; ?>
                                         </span>
                                     </div>
                                 </div>
@@ -321,7 +294,7 @@ setting (user 'root' with no password) */
                                 <input class="input1" type="text" id="uname" name="uname" placeholder="From">
                             </th>
                             <th>
-                                <textarea id="msg" name="msg" rows='3' cols='50' placeholder="Type your message">
+                                <textarea id="msg" name="msg" rows='1' cols='50' placeholder="Share your feelings">
 			</textarea>
                             </th>
                             <th>
