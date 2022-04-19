@@ -42,6 +42,7 @@ setting (user 'root' with no password) */
 <html>
 
 <head>
+    <script src="https://kit.fontawesome.com/42509ed0ff.js" crossorigin="anonymous" ></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -139,7 +140,7 @@ setting (user 'root' with no password) */
             padding: 10px;
             color: #000;
             margin-right: 15px;
-            background-color: #e94e46;
+            background-color: #4d4dff;
             line-height: 20px;
             max-width: 90%;
             display: inline-block;
@@ -185,9 +186,8 @@ setting (user 'root' with no password) */
         }
 
         main footer .input2 {
-            resize: none;
+            outline: none;
             border: 100%;
-            display: block;
             width: 40%;
             height: 55px;
             border-radius: 3px;
@@ -197,8 +197,8 @@ setting (user 'root' with no password) */
             margin-left: 100px;
             color: white;
             text-align: center;
-            background-color: black;
-            border: 2px solid white;
+            background: transparent;
+            border: none;
         }
 
         main footer textarea::placeholder {
@@ -298,7 +298,8 @@ setting (user 'root' with no password) */
 			</textarea>
                             </th>
                             <th>
-                                <input class="input2" type="submit" id="submit" name="submit" value="send">
+                                
+                                <input class="input2" type="submit" id="submit" name="submit" value="SEND">
                             </th>
                         </tr>
                     </table>
